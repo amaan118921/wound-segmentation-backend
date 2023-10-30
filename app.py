@@ -12,6 +12,7 @@ def hello_world():
 @app.route('/predict')
 def predict():
     url = request.args.get('url')
-    filename = request.args.get('filename')+'.jpg'
-    if pr.predict_result(url, filename): return 'success'
+    filename = request.args.get('filename')
+    name = filename + '.jpg'
+    if pr.predict_result(url, name): return 'success'
     return 'failed'
